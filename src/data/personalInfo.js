@@ -65,7 +65,7 @@ export const personalInfo = {
     fileSize: '79.1 KB',
     pages: 1,
     updated: '2026-07-14',
-    focus: ['LLM & agent systems', 'Forecasting pipelines', 'MERN product build'],
+    focus: ['LLM & AI Agent systems', 'Langchain & RAG', 'Forecasting pipelines', 'MERN product build'],
   },
 
   footer: {
