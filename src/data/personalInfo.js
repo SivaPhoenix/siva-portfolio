@@ -8,6 +8,13 @@ export const personalInfo = {
   username: 'sivasriram', // used in terminal prompt (root@<username>)
   githubUsername: 'SivaPhoenix', // used for GitHub contribution calendar + socials
 
+  experience: {
+    role: 'AI/ML Engineer',
+    company: 'Sunoida Solutions Pvt Ltd',
+    duration: '1+ year',
+    status: 'current', // shows a "currently working" badge
+  },
+
   stats: [
     { v: '6+', k: 'PROJECTS SHIPPED' },
     { v: 'AI-103', k: 'AZURE CERTIFIED' },
@@ -55,7 +62,7 @@ export const personalInfo = {
 
   resume: {
     fileName: 'Siva_Sriram.pdf',
-    fileSize: '248 KB',
+    fileSize: '79.1 KB',
     pages: 1,
     updated: '2026-07-14',
     focus: ['LLM & agent systems', 'Forecasting pipelines', 'MERN product build'],

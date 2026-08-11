@@ -1,21 +1,5 @@
 export const projects = [
   {
-    title: "AI Insight (Text-to-SQL Platform)",
-    desc: "Converts natural language into SQL and auto-generates MIS/financial reports for banking using LLMs.",
-    tags: ["Python", "LangChain", "RAG","LLM","Redis","Qdrant"],
-    liveUrl: null,
-    ghUrl: null,
-    path: "~/projects/ai-insight",
-  },
-  {
-    title: "Early Warning System — CAMEL Forecasting",
-    desc: "AI forecasting platform for banking CAMEL metrics with adaptive model routing and risk signals.",
-    tags: ["Python", "ML","Data Treatment"],
-    liveUrl: null,
-    ghUrl: null,
-    path: "~/projects/ews-camel",
-  },
-  {
     title: "Notes App (MERN)",
     desc: "Feature-rich notes application with create, edit, delete, and pin. Fully responsive, deployed on Vercel.",
     tags: ["MongoDB", "Express", "React", "Node.js"],

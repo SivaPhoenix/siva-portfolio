@@ -26,7 +26,7 @@ const toolIcons = {
 }
 
 export default function About() {
-  const { name, bio, certifications, skills, tools, githubUsername } = personalInfo
+  const { name, bio, certifications, skills, tools, githubUsername, experience } = personalInfo
 
   return (
     <section id="about" className="px-[18px] py-12 border-b border-border bg-section lg:px-12 lg:py-[88px]">
@@ -45,6 +45,14 @@ export default function About() {
           <div className="px-[22px] py-6 font-mono text-[13.5px] leading-[1.95]">
             <div className="text-green">$ whoami</div>
             <div className="text-text my-1.5 mb-[22px]">{name} — AI Engineer &amp; Full Stack Developer (MERN)</div>
+
+            <div className="text-green">$ cat experience.txt</div>
+            <div className="my-2.5 mb-[22px] flex items-center gap-2.5 px-3.5 py-2.5 border border-green bg-green/8 w-fit">
+              <span className="w-[7px] h-[7px] bg-green block shrink-0 animate-[blink_2s_step-end_infinite]" />
+              <span className="font-mono text-xs text-text">
+                {experience.role} @ <span className="text-green">{experience.company}</span> · {experience.duration}
+              </span>
+            </div>
 
             <div className="text-green">$ cat bio.txt</div>
             <div className="text-muted my-1.5 mb-[22px] max-w-[60ch]">
