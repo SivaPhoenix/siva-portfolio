@@ -3,8 +3,9 @@ import aiwrite from '../assets/project/aiwrite.jpg'
 import human from '../assets/project/human.jpg'
 import notesApp from '../assets/project/notes_app.png'
 import siya from '../assets/project/siya.jpg'
+import github from '../assets/project/github.png'
 
-const thumbs = { 'aiwrite.jpg': aiwrite, 'human.jpg': human, 'notes_app.png': notesApp, 'siya.jpg': siya }
+const thumbs = { 'aiwrite.jpg': aiwrite, 'human.jpg': human, 'notes_app.png': notesApp, 'siya.jpg': siya, 'github.png': github }
 
 function ProjectCard({ project }) {
   const { title, desc, tags, liveUrl, ghUrl, path, thumb } = project
@@ -13,9 +14,9 @@ function ProjectCard({ project }) {
   return (
     <div className="bg-surface border border-border flex flex-col transition-[border-color,box-shadow] duration-[250ms] hover:border-green hover:shadow-[0_0_0_1px_rgba(57,255,136,.25),0_0_34px_rgba(57,255,136,.14)]">
       {/* Thumbnail */}
-      <div className="group relative aspect-video border-b border-border bg-raised flex items-center justify-center grayscale contrast-[1.05] transition-[filter] duration-500 overflow-hidden hover:grayscale-0">
+      <div className="group relative aspect-video border-b border-border bg-raised flex items-center justify-center overflow-hidden">
         {thumbSrc ? (
-          <img src={thumbSrc} alt={title} className="w-full h-full object-cover" />
+          <img src={thumbSrc} alt={title} className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105" />
         ) : (
           <span className="font-mono text-[11px] text-dim">[ thumbnail ]</span>
         )}
@@ -75,7 +76,7 @@ export default function Projects() {
         <span className="hidden lg:block font-mono text-xs text-muted shrink-0">ls ~/projects · {projects.length} items</span>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[22px]">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-[22px]">
         {projects.map((p, i) => <ProjectCard key={i} project={p} />)}
       </div>
     </section>

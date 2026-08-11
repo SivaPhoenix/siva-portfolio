@@ -2,7 +2,7 @@ export const projects = [
   {
     title: "AI Insight (Text-to-SQL Platform)",
     desc: "Converts natural language into SQL and auto-generates MIS/financial reports for banking using LLMs.",
-    tags: ["Python", "LangChain", "React"],
+    tags: ["Python", "LangChain", "RAG","LLM","Redis","Qdrant"],
     liveUrl: null,
     ghUrl: null,
     path: "~/projects/ai-insight",
@@ -10,18 +10,10 @@ export const projects = [
   {
     title: "Early Warning System — CAMEL Forecasting",
     desc: "AI forecasting platform for banking CAMEL metrics with adaptive model routing and risk signals.",
-    tags: ["Python", "FastAPI", "ML"],
+    tags: ["Python", "ML","Data Treatment"],
     liveUrl: null,
     ghUrl: null,
     path: "~/projects/ews-camel",
-  },
-  {
-    title: "Sunoida Support Ticket Analytics",
-    desc: "Support ticket analytics dashboard with KPI visualization and trend analysis.",
-    tags: ["React", "Node.js", "MongoDB"],
-    liveUrl: null,
-    ghUrl: null,
-    path: "~/projects/sunoida",
   },
   {
     title: "Notes App (MERN)",
@@ -53,9 +45,10 @@ export const projects = [
   {
     title: "GitHub AI Agent (Concept)",
     desc: "Conversational agent with read-only GitHub access that answers repository questions in natural language.",
-    tags: ["LangChain", "GitHub API", "Python"],
+    tags: ["LangChain", "GitHub API", "Python","LLM","AI Agent"],
     liveUrl: null,
     ghUrl: null,
-    path: "~/projects/gh-agent",
+    path: "~/projects/github",
+    thumb:"github.png"
   },
 ];

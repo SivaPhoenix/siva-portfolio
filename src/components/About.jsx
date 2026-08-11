@@ -4,6 +4,7 @@ import { personalInfo } from '../data/personalInfo'
 import {
   SiVercel, SiAnaconda,
   SiRender, SiAndroidstudio, SiPycharm, SiNetlify, SiFigma,
+  SiGooglegemini, SiClaude, SiKaggle, SiHuggingface,
 } from 'react-icons/si'
 import { PiImageBold } from 'react-icons/pi'
 import { TbBrandVisualStudio } from 'react-icons/tb'
@@ -18,6 +19,10 @@ const toolIcons = {
   pycharm: SiPycharm,
   netlify: SiNetlify,
   figma: SiFigma,
+  gemini: SiGooglegemini,
+  claude: SiClaude,
+  kaggle: SiKaggle,
+  huggingface: SiHuggingface,
 }
 
 export default function About() {
@@ -39,7 +44,7 @@ export default function About() {
         <TerminalWindow title="bash — about">
           <div className="px-[22px] py-6 font-mono text-[13.5px] leading-[1.95]">
             <div className="text-green">$ whoami</div>
-            <div className="text-text my-1.5 mb-[22px]">{name} — AI Developer &amp; Full Stack Developer (MERN)</div>
+            <div className="text-text my-1.5 mb-[22px]">{name} — AI Engineer &amp; Full Stack Developer (MERN)</div>
 
             <div className="text-green">$ cat bio.txt</div>
             <div className="text-muted my-1.5 mb-[22px] max-w-[60ch]">

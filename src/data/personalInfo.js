@@ -1,7 +1,7 @@
 // Edit this file to update all personal/site content across the portfolio.
 export const personalInfo = {
   name: 'Siva Sriram A B',
-  role: 'AI Developer',
+  role: 'AI Engineer',
   roleSecondary: 'Full Stack (MERN)',
   tagline: 'Building AI-powered applications and full-stack solutions that solve real-world problems.',
   bio: 'Building AI-powered applications and full-stack solutions that solve real-world problems. Day to day that means LLM pipelines, forecasting systems and the React/Node surfaces that make them usable.',
@@ -9,7 +9,7 @@ export const personalInfo = {
   githubUsername: 'SivaPhoenix', // used for GitHub contribution calendar + socials
 
   stats: [
-    { v: '8+', k: 'PROJECTS SHIPPED' },
+    { v: '6+', k: 'PROJECTS SHIPPED' },
     { v: 'AI-103', k: 'AZURE CERTIFIED' },
     { v: 'MERN', k: 'FULL STACK' },
   ],
@@ -22,7 +22,7 @@ export const personalInfo = {
     { n: 'Python', c: '#E5C07B' }, { n: 'React', c: '#61AFEF' }, { n: 'Node.js', c: '#98C379' },
     { n: 'Express', c: '#E5C07B' }, { n: 'MongoDB', c: '#98C379' }, { n: 'TypeScript', c: '#61AFEF' },
     { n: 'LangChain', c: '#C678DD' }, { n: 'Azure OpenAI', c: '#C678DD' }, { n: 'FastAPI', c: '#56B6C2' },
-    { n: 'PyTorch', c: '#E06C75' }, { n: 'PostgreSQL', c: '#56B6C2' }, { n: 'Docker', c: '#61AFEF' },
+    { n: 'PyTorch', c: '#E06C75' }, { n: 'PostgreSQL', c: '#56B6C2' }, { n: 'ML', c: '#C678DD' }, { n: 'AI Agents', c: '#39FF88' }, { n: 'RAG', c: '#1654daff' },
     { n: 'Tailwind', c: '#56B6C2' }, { n: 'Git', c: '#E06C75' },
   ],
 
@@ -36,6 +36,10 @@ export const personalInfo = {
     { n: 'PyCharm', icon: 'pycharm' },
     { n: 'Netlify', icon: 'netlify' },
     { n: 'Figma', icon: 'figma' },
+    { n: 'Gemini', icon: 'gemini' },
+    { n: 'Claude', icon: 'claude' },
+    { n: 'Kaggle', icon: 'kaggle' },
+    { n: 'Hugging Face', icon: 'huggingface' },
   ],
 
   phone: '+91 88382 70416', // fill in your phone number, e.g. '+91 98765 43210'

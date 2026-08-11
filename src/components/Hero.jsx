@@ -1,14 +1,18 @@
 import { personalInfo } from '../data/personalInfo'
 
 const codeLines = [
-  'const agent = await createAgent({ tools, model: "gpt-4o" });',
-  'router.post("/api/query", auth, async (req, res) => {',
-  '  const sql = await textToSql(req.body.prompt);',
-  'export default function useForecast(series) {',
-  'db.collection("tickets").aggregate([{ $group: { _id: "$status" } }])',
-  'if (camel.score < threshold) emitEarlyWarning(bank.id);',
+  'router.post("/api/insight/query", authMiddleware, async (req, res) => { const sql = await textToSql(req.body.prompt, bankingSchema); return res.json({ sql }); });',
+  'const camelScore = computeCamelScore({ capital, assetQuality, management, earnings, liquidity }, { adaptiveModel: forecastingRouter.select(bankId) });',
+  'router.get("/api/ews/alerts", authMiddleware, async (req, res) => { const alerts = await scanRiskThresholds(camelScore); return res.status(200).json(alerts); });',
+  'router.post("/api/notes", authMiddleware, rateLimiter, async (req, res) => { const note = await Note.create({ ...req.body, userId: req.user.id }); return res.json(note); });',
+  'const diagnosis = await predictDisease(symptoms, { model: randomForestClassifier, datasetRows: 4920, confidenceThreshold: 0.72 });',
+  'router.post("/api/siya/predict", async (req, res) => { const result = await diagnosisEngine.run(req.body.symptoms); return res.json(result); });',
+  'const activityLabel = resNetClassifier.predict(sensorWindow, { accuracy: 0.97, classes: activityLabels, device: "edge-realtime" });',
+  'router.post("/api/har/classify", async (req, res) => { const label = await resNetClassifier.predict(req.body.frames); return res.json({ label }); });',
+  'const githubAnswer = await retrievalChain.invoke({ query: req.body.question, retriever: githubReadOnlyRetriever, llm: azureOpenAI });',
+  'router.post("/api/github-agent/ask", authMiddleware, async (req, res) => { const answer = await githubAgent.answer(req.body.question); return res.json({ answer }); });',
 ]
-const codeRain = Array.from({ length: 40 }, (_, i) => codeLines[i % 6]).join('\n')
+const codeRain = Array.from({ length: 60 }, (_, i) => codeLines[i % codeLines.length]).join('\n')
 
 export default function Hero() {
   const { name, role, roleSecondary, tagline, stats } = personalInfo
