@@ -53,11 +53,11 @@ export const personalInfo = {
 
   socials: [
     { icon: 'github', label: 'GitHub', href: 'https://github.com/SivaPhoenix' },
-    { icon: 'linkedin', label: 'LinkedIn', href: 'https://www.linkedin.com/in/sivasriram/' },
+    { icon: 'linkedin', label: 'LinkedIn', href: 'https://www.linkedin.com/in/siva-sriram-a-b-1206ss/' },
     { icon: 'twitter', label: 'Twitter', href: 'https://twitter.com/SivaSri1206' },
     { icon: 'instagram', label: 'Instagram', href: 'https://instagram.com/siva._.prince' },
     { icon: 'mail', label: 'Email', href: 'mailto:sivasriram1206@gmail.com' },
-    { icon: 'phone', label: 'Phone', href: '8838270416' }, // built from personalInfo.phone at render time
+    { icon: 'whatsapp', label: 'WhatsApp', href: '' }, // built from personalInfo.phone at render time
   ],
 
   resume: {

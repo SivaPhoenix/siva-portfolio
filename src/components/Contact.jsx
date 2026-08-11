@@ -1,6 +1,7 @@
 import { personalInfo } from '../data/personalInfo'
-import { AiFillGithub, AiOutlineTwitter, AiFillInstagram, AiOutlineMail, AiOutlinePhone } from 'react-icons/ai'
+import { AiFillGithub, AiOutlineTwitter, AiFillInstagram, AiOutlineMail } from 'react-icons/ai'
 import { FaLinkedinIn } from 'react-icons/fa'
+import { SiWhatsapp } from 'react-icons/si'
 
 const icons = {
   github: AiFillGithub,
@@ -8,15 +9,15 @@ const icons = {
   twitter: AiOutlineTwitter,
   instagram: AiFillInstagram,
   mail: AiOutlineMail,
-  phone: AiOutlinePhone,
+  whatsapp: SiWhatsapp,
 }
 
 export default function Contact() {
   const { socials, phone } = personalInfo
 
   const visibleSocials = socials
-    .filter(s => s.icon !== 'phone' || phone)
-    .map(s => s.icon === 'phone' ? { ...s, href: `tel:${phone.replace(/\s+/g, '')}` } : s)
+    .filter(s => s.icon !== 'whatsapp' || phone)
+    .map(s => s.icon === 'whatsapp' ? { ...s, href: `https://wa.me/${phone.replace(/\D/g, '')}` } : s)
 
   return (
     <section id="contact" className="px-[18px] pt-12 pb-10 bg-section lg:px-12 lg:pt-[88px] lg:pb-10">
@@ -28,6 +29,10 @@ export default function Contact() {
       </div>
 
       <div className="flex flex-col gap-6 items-center bg-surface border border-border p-10 max-w-xl mx-auto">
+        <div className="text-center">
+          <div className="font-mono font-semibold text-lg text-text tracking-[0.05em]">FIND ME ON</div>
+          <div className="mt-1.5 font-mono text-[13px] text-muted">Feel free to connect with me</div>
+        </div>
         <div className="flex flex-wrap justify-center gap-3">
           {visibleSocials.map(s => {
             const Icon = icons[s.icon]
