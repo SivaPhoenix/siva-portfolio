@@ -42,20 +42,14 @@ export default function Resume() {
             <span className="text-green">$ cat</span> <span className="text-text">resume.pdf</span>
           </div>
 
-          {/* Desktop: real inline PDF viewer */}
-          <div ref={viewerRef} className="hidden lg:flex h-[780px] bg-raised items-start justify-center relative overflow-y-auto py-4">
+          {/* Inline PDF viewer — all screen sizes */}
+          <div ref={viewerRef} className="flex h-[420px] lg:h-[780px] bg-raised items-start justify-center relative overflow-y-auto py-4">
             <Document file={resumePdf} onLoadSuccess={({ numPages }) => setNumPages(numPages)}>
               <Page pageNumber={1} width={pageWidth} />
             </Document>
             <div className="absolute left-0 bottom-0 px-3 py-1.5 font-mono text-[11px] text-muted border-t border-r border-border bg-surface">
               page 1 / {numPages} · inline viewer
             </div>
-          </div>
-
-          {/* Mobile: text only, no inline viewer */}
-          <div className="lg:hidden px-4 py-5 font-mono text-[11.5px] leading-[1.9] text-muted">
-            <div># inline viewer disabled on mobile</div>
-            <div>{resume.fileName} · {resume.fileSize} · {resume.pages} pages</div>
           </div>
         </TerminalWindow>
 
