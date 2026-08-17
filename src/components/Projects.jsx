@@ -5,57 +5,84 @@ import notesApp from '../assets/project/notes_app.png'
 import siya from '../assets/project/siya.jpg'
 import github from '../assets/project/github.png'
 
-const thumbs = { 'aiwrite.jpg': aiwrite, 'human.jpg': human, 'notes_app.png': notesApp, 'siya.jpg': siya, 'github.png': github }
+const thumbs = {
+  'aiwrite.jpg': aiwrite,
+  'human.jpg': human,
+  'notes_app.png': notesApp,
+  'siya.jpg': siya,
+  'github.png': github,
+}
 
 function ProjectCard({ project }) {
   const { title, desc, tags, liveUrl, ghUrl, path, thumb } = project
   const thumbSrc = thumb && thumbs[thumb]
 
   return (
-    <div className="bg-surface border border-border flex flex-col transition-[border-color,box-shadow] duration-[250ms] hover:border-green hover:shadow-[0_0_0_1px_rgba(57,255,136,.25),0_0_34px_rgba(57,255,136,.14)]">
-      {/* Thumbnail */}
-      <div className="group relative aspect-video border-b border-border bg-raised flex items-center justify-center overflow-hidden">
+    <div className="group bg-surface border border-border p-4 sm:p-5 flex flex-col transition-all duration-300 hover:border-green hover:shadow-[0_0_0_1px_rgba(57,255,136,0.2),0_8px_32px_rgba(57,255,136,0.12)]">
+      {/* Thumbnail framed with padding and border */}
+      <div className="relative aspect-video w-full border border-border bg-raised overflow-hidden flex items-center justify-center">
         {thumbSrc ? (
-          <img src={thumbSrc} alt={title} className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105" />
+          <img
+            src={thumbSrc}
+            alt={title}
+            className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]"
+          />
         ) : (
-          <span className="font-mono text-[11px] text-dim">[ thumbnail ]</span>
+          <span className="font-mono text-xs text-dim">[ thumbnail ]</span>
         )}
-        <div className="absolute right-0 top-0 px-[9px] py-[5px] bg-section border-l border-b border-border font-mono text-[10px] text-purple pointer-events-none">
+        <div className="absolute right-2 top-2 px-2 py-0.5 bg-surface/90 backdrop-blur-sm border border-border font-mono text-[10px] text-purple pointer-events-none">
           {path}
         </div>
       </div>
 
       {/* Body */}
-      <div className="px-[18px] py-5 flex flex-col gap-[11px] flex-1">
-        <div className="font-sans font-semibold text-base text-text leading-[1.35]">{title}</div>
-        <div className="font-sans text-[12.5px] leading-[1.7] text-muted flex-1">{desc}</div>
+      <div className="pt-4 flex flex-col gap-3 flex-1">
+        <div className="font-sans font-bold text-[17px] text-text leading-[1.3] group-hover:text-green transition-colors">
+          {title}
+        </div>
+        <div className="font-sans text-[13px] leading-[1.7] text-muted flex-1">
+          {desc}
+        </div>
 
         {/* Tags */}
-        <div className="flex flex-wrap gap-1.5">
-          {tags.map(t => (
-            <span key={t} className="px-2 py-1 bg-raised font-mono text-[10.5px] text-muted">{t}</span>
+        <div className="flex flex-wrap gap-1.5 pt-1">
+          {tags.map((t) => (
+            <span
+              key={t}
+              className="px-2.5 py-0.5 bg-raised border border-border font-mono text-[11px] text-muted"
+            >
+              {t}
+            </span>
           ))}
         </div>
 
-        {/* Buttons */}
-        <div className="flex gap-2 mt-2 pt-3.5 border-t border-border">
+        {/* Action Buttons */}
+        <div className="flex flex-wrap items-center gap-2 pt-3.5 mt-2 border-t border-border">
           {liveUrl ? (
-            <a href={liveUrl} target="_blank" rel="noopener noreferrer"
-               className="px-[13px] py-2.5 font-mono font-medium text-[11.5px] text-green border border-border no-underline transition-colors duration-150 hover:border-green hover:bg-green/8">
+            <a
+              href={liveUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-3.5 py-2 font-mono font-medium text-xs text-green bg-green/10 border border-green/40 no-underline transition-all duration-150 hover:bg-green hover:!text-section"
+            >
               open live ↗
             </a>
           ) : (
-            <span className="px-[13px] py-2.5 font-mono font-medium text-[11.5px] text-dim border border-dashed border-border cursor-not-allowed">
+            <span className="px-3.5 py-2 font-mono font-medium text-xs text-dim border border-dashed border-border cursor-not-allowed">
               # no live link
             </span>
           )}
           {ghUrl ? (
-            <a href={ghUrl} target="_blank" rel="noopener noreferrer"
-               className="px-[13px] py-2.5 font-mono font-medium text-[11.5px] text-text border border-border no-underline transition-colors duration-150 hover:border-purple hover:text-purple">
+            <a
+              href={ghUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-3.5 py-2 font-mono font-medium text-xs text-text border border-border no-underline transition-all duration-150 hover:border-purple hover:text-purple hover:bg-purple/10"
+            >
               git clone
             </a>
           ) : (
-            <span className="px-[13px] py-2.5 font-mono font-medium text-[11.5px] text-dim border border-dashed border-border cursor-not-allowed">
+            <span className="px-3.5 py-2 font-mono font-medium text-xs text-dim border border-dashed border-border cursor-not-allowed">
               # private repo
             </span>
           )}
@@ -76,8 +103,10 @@ export default function Projects() {
         <span className="hidden lg:block font-mono text-xs text-muted shrink-0">ls ~/projects · {projects.length} items</span>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-[22px]">
-        {projects.map((p, i) => <ProjectCard key={i} project={p} />)}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-7">
+        {projects.map((p, i) => (
+          <ProjectCard key={i} project={p} />
+        ))}
       </div>
     </section>
   )
