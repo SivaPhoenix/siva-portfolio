@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Nav from './components/Nav'
 import Hero from './components/Hero'
 import About from './components/About'
@@ -11,9 +11,24 @@ import BootScreen from './components/BootScreen'
 function App() {
   const [booted, setBooted] = useState(false)
 
+  useEffect(() => {
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual'
+    }
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' })
+    if (window.location.hash) {
+      window.history.replaceState(null, '', window.location.pathname)
+    }
+  }, [])
+
+  const handleBootDone = () => {
+    setBooted(true)
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' })
+  }
+
   return (
     <div className="bg-bg min-h-screen">
-      {!booted && <BootScreen onDone={() => setBooted(true)} />}
+      {!booted && <BootScreen onDone={handleBootDone} />}
       <Nav />
       <main>
         <Hero />

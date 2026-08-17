@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react'
 import { personalInfo } from '../data/personalInfo'
+import Type from './Type'
 
 const codeLines = [
   'router.post("/api/insight/query", authMiddleware, async (req, res) => { const sql = await textToSql(req.body.prompt, bankingSchema); return res.json({ sql }); });',
@@ -16,26 +16,7 @@ const codeLines = [
 const codeRain = Array.from({ length: 60 }, (_, i) => codeLines[i % codeLines.length]).join('\n')
 
 export default function Hero() {
-  const { name, role, roleSecondary, tagline, stats } = personalInfo
-
-  // Typewriter effect for name
-  const [displayedName, setDisplayedName] = useState('')
-  const [typingDone, setTypingDone] = useState(false)
-
-  useEffect(() => {
-    let i = 0
-    setDisplayedName('')
-    setTypingDone(false)
-    const interval = setInterval(() => {
-      i++
-      setDisplayedName(name.slice(0, i))
-      if (i >= name.length) {
-        clearInterval(interval)
-        setTypingDone(true)
-      }
-    }, 60)
-    return () => clearInterval(interval)
-  }, [name])
+  const { role, roleSecondary, tagline, stats } = personalInfo
 
   return (
     <section id="home" className="relative px-[18px] pt-10 pb-12 border-b border-border bg-section overflow-hidden lg:px-12 lg:py-[88px]">
@@ -53,12 +34,8 @@ export default function Hero() {
           <div className="font-mono text-[13px] text-muted tracking-[0.14em]">
             // available for collaboration
           </div>
-          <h1 className="mt-3.5 font-sans font-bold text-[clamp(38px,5vw,76px)] leading-[1.02] text-text tracking-[-0.03em] flex items-baseline gap-[3px]">
-            <span>{displayedName}</span>
-            <span
-              className="inline-block w-[3px] h-[0.85em] bg-green align-baseline"
-              style={{ animation: typingDone ? 'blink 1s step-end infinite' : 'none' }}
-            />
+          <h1 className="mt-3.5 font-sans font-bold text-[clamp(38px,5vw,76px)] leading-[1.02] text-text tracking-[-0.03em] flex items-baseline">
+            <Type />
           </h1>
           <div className="mt-3.5 flex flex-wrap items-center gap-2 font-mono font-medium text-[15px] leading-[1.4] lg:gap-3 lg:text-[26px] lg:mt-[22px]">
             <span className="text-green">&gt;</span>
