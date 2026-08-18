@@ -63,7 +63,7 @@ export const personalInfo = {
   resume: {
     fileName: 'Siva_Sriram.pdf',
     fileSize: '82.4 KB',
-    pages: 1,
+    pages: 2,
     updated: '2026-08-18',
     focus: ['LLM & AI Agent systems', 'Langchain & RAG', 'Forecasting pipelines', 'MERN product build'],
   },

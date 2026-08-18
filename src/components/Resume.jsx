@@ -43,12 +43,23 @@ export default function Resume() {
           </div>
 
           {/* Inline PDF viewer — all screen sizes */}
-          <div ref={viewerRef} className="flex h-[420px] lg:h-[780px] bg-raised items-start justify-center relative overflow-y-auto py-4">
-            <Document file={resumePdf} onLoadSuccess={({ numPages }) => setNumPages(numPages)}>
-              <Page pageNumber={1} width={pageWidth} />
+          <div ref={viewerRef} className="flex flex-col h-[420px] lg:h-[780px] bg-raised items-center relative overflow-y-auto py-4">
+            <Document
+              file={resumePdf}
+              onLoadSuccess={({ numPages }) => setNumPages(numPages)}
+              className="flex flex-col items-center gap-4"
+            >
+              {Array.from(new Array(numPages), (_, index) => (
+                <Page
+                  key={`page_${index + 1}`}
+                  pageNumber={index + 1}
+                  width={pageWidth}
+                  className="shadow-md"
+                />
+              ))}
             </Document>
-            <div className="absolute left-0 bottom-0 px-3 py-1.5 font-mono text-[11px] text-muted border-t border-r border-border bg-surface">
-              page 1 / {numPages} · inline viewer
+            <div className="sticky bottom-0 left-0 self-start px-3 py-1.5 font-mono text-[11px] text-muted border-t border-r border-border bg-surface/90 backdrop-blur-sm z-10">
+              {numPages} {numPages === 1 ? 'page' : 'pages'} · scroll to view
             </div>
           </div>
         </TerminalWindow>
