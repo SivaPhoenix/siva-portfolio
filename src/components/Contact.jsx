@@ -2,6 +2,7 @@ import { personalInfo } from '../data/personalInfo'
 import { AiFillGithub, AiOutlineTwitter, AiFillInstagram, AiOutlineMail } from 'react-icons/ai'
 import { FaLinkedinIn } from 'react-icons/fa'
 import { SiWhatsapp } from 'react-icons/si'
+import ParticleField from './ParticleField'
 
 const icons = {
   github: AiFillGithub,
@@ -28,12 +29,13 @@ export default function Contact() {
         <div className="flex-1 h-px bg-border" />
       </div>
 
-      <div className="flex flex-col gap-6 items-center bg-surface border border-border p-10 max-w-xl mx-auto">
-        <div className="text-center">
+      <div className="relative flex flex-col gap-6 items-center bg-surface border border-border p-10 max-w-xl mx-auto overflow-hidden">
+        <ParticleField />
+        <div className="relative text-center">
           <div className="font-mono font-semibold text-lg text-text tracking-[0.05em]">FIND ME ON</div>
           <div className="mt-1.5 font-mono text-[13px] text-muted">Feel free to connect with me</div>
         </div>
-        <div className="flex flex-wrap justify-center gap-3">
+        <div className="relative flex flex-wrap justify-center gap-3">
           {visibleSocials.map(s => {
             const Icon = icons[s.icon]
             return (
