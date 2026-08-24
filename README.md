@@ -2,7 +2,7 @@
 
 Personal portfolio site for **Siva Sriram A B** — AI Developer & Full Stack (MERN) Developer. Terminal/hacker-themed single-page site built with React 19, Vite, and Tailwind CSS v4.
 
-**Live:** _add your deployed URL here_
+**Live:** https://siva-portfolio-ruby.vercel.app/
 
 ## Stack
 
