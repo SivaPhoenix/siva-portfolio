@@ -1,5 +1,15 @@
 export const projects = [
   {
+    title: "Kanaku Pillai — Personal Finance Tracker",
+    desc: "Full-stack expense tracker for income, expenses and transfers across bank, cash, card and investment accounts, with live balances, recurring entries and CSV export. React and TanStack Query frontend on a Node/Express REST API with MongoDB and Google sign-in.",
+    tags: ["React", "TanStack Query", "Node.js", "Express", "MongoDB", "Tailwind CSS"],
+    liveUrl: "https://kanaku-pillai-web.vercel.app",
+    ghUrl: "https://github.com/SivaPhoenix/kanaku-pillai-web",
+    ghUrl2: "https://github.com/SivaPhoenix/kanaku-pillai-backend",
+    path: "~/projects/kanaku_pillai",
+    thumb: "kanaku_pillai.png",
+  },
+  {
     title: "Notes App (MERN)",
     desc: "Feature-rich notes application with create, edit, delete, and pin. Fully responsive, deployed on Vercel.",
     tags: ["MongoDB", "Express", "React", "Node.js"],
