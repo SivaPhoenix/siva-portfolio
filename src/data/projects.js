@@ -6,8 +6,8 @@ export const projects = [
     liveUrl: "https://kanaku-pillai-web.vercel.app",
     ghUrl: "https://github.com/SivaPhoenix/kanaku-pillai-web",
     ghUrl2: "https://github.com/SivaPhoenix/kanaku-pillai-backend",
-    path: "~/projects/kanaku_pillai",
-    thumb: "kanaku_pillai.png",
+    path: "~/projects/kanakupillai",
+    thumb: "kanakupillai.png",
   },
   {
     title: "Notes App (MERN)",
