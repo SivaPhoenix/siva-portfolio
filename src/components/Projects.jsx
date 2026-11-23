@@ -4,9 +4,11 @@ import human from '../assets/project/human.jpg'
 import notesApp from '../assets/project/notes_app.png'
 import siya from '../assets/project/siya.jpg'
 import github from '../assets/project/github.png'
+import kanakupillai from '../assets/project/kanakupillai.png'
 
 const thumbs = {
   'aiwrite.jpg': aiwrite,
+  'kanakupillai.png': kanakupillai,
   'human.jpg': human,
   'notes_app.png': notesApp,
   'siya.jpg': siya,
